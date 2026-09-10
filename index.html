@@ -1,33 +1,199 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Eletrônico - Controle Firebase</title>
-    <!-- Link para o arquivo de estilo -->
+
+    <title>Estacionamento Inteligente</title>
+
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte digital estilo letreiro de LED/Estacionamento -->
-    <link href="https://googleapis.com" rel="stylesheet">
+
+    <!-- Fonte tecnológica -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-    <div class="display-container">
-        <!-- Título do Letreiro -->
-        <div class="display-header">SISTEMA DE VAGAS</div>
+    <main class="container">
 
-        <!-- Tela Principal do Display Digital -->
-        <div id="status-panel" class="display-screen status-off">
-            CARREGANDO...
+        <!-- CABEÇALHO -->
+        <header class="header">
+
+            <div class="car-icon">
+                🚗
+            </div>
+
+            <div>
+                <h1>ESTACIONAMENTO</h1>
+                <p>SISTEMA INTELIGENTE DE VAGAS</p>
+            </div>
+
+        </header>
+
+
+        <!-- RESUMO DAS VAGAS -->
+        <section class="summary">
+
+            <div class="summary-card total">
+                <span class="summary-icon">🅿️</span>
+                <span class="summary-title">TOTAL</span>
+                <strong id="total-vagas">4</strong>
+            </div>
+
+            <div class="summary-card occupied">
+                <span class="summary-icon">🔴</span>
+                <span class="summary-title">OCUPADAS</span>
+                <strong id="vagas-ocupadas">0</strong>
+            </div>
+
+            <div class="summary-card free">
+                <span class="summary-icon">🟢</span>
+                <span class="summary-title">LIVRES</span>
+                <strong id="vagas-livres">4</strong>
+            </div>
+
+        </section>
+
+
+        <!-- TÍTULO DAS VAGAS -->
+        <div class="section-title">
+            <span></span>
+            <h2>STATUS DAS VAGAS</h2>
+            <span></span>
         </div>
 
-        <!-- Botões de Controle -->
-        <div class="control-box">
-            <button id="btn-on" class="btn btn-on">LIGAR</button>
-            <button id="btn-off" class="btn btn-off">DESLIGAR</button>
-        </div>
-    </div>
 
-    <!-- Importação do arquivo lógico em JavaScript -->
+        <!-- VAGAS -->
+        <section class="parking-grid">
+
+            <div class="parking-space livre" id="vaga1">
+
+                <div class="vaga-number">
+                    01
+                </div>
+
+                <div class="status-light"></div>
+
+                <h3>VAGA 01</h3>
+
+                <p class="vaga-status">
+                    LIVRE
+                </p>
+
+            </div>
+
+
+            <div class="parking-space livre" id="vaga2">
+
+                <div class="vaga-number">
+                    02
+                </div>
+
+                <div class="status-light"></div>
+
+                <h3>VAGA 02</h3>
+
+                <p class="vaga-status">
+                    LIVRE
+                </p>
+
+            </div>
+
+
+            <div class="parking-space livre" id="vaga3">
+
+                <div class="vaga-number">
+                    03
+                </div>
+
+                <div class="status-light"></div>
+
+                <h3>VAGA 03</h3>
+
+                <p class="vaga-status">
+                    LIVRE
+                </p>
+
+            </div>
+
+
+            <div class="parking-space livre" id="vaga4">
+
+                <div class="vaga-number">
+                    04
+                </div>
+
+                <div class="status-light"></div>
+
+                <h3>VAGA 04</h3>
+
+                <p class="vaga-status">
+                    LIVRE
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTROLE DO LED -->
+        <div class="section-title">
+            <span></span>
+            <h2>CONTROLE DO SISTEMA</h2>
+            <span></span>
+        </div>
+
+
+        <section class="led-control">
+
+            <div class="led-status">
+
+                <div id="led-indicator" class="led-circle desligado"></div>
+
+                <div>
+                    <span>STATUS DO LED</span>
+
+                    <strong id="status-panel">
+                        LED DESLIGADO
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="control-box">
+
+                <button id="btn-on" class="btn btn-on">
+                    LIGAR
+                </button>
+
+                <button id="btn-off" class="btn btn-off">
+                    DESLIGAR
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer>
+
+            <span class="connection-dot"></span>
+
+            SISTEMA CONECTADO AO FIREBASE
+
+        </footer>
+
+    </main>
+
+
     <script type="module" src="app.js"></script>
+
 </body>
+
 </html>
